@@ -158,4 +158,3 @@ public class MainActivity extends AppCompatActivity {
         return Double.toString(weight * 50);
     }
 }
-

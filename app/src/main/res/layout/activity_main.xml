@@ -286,7 +286,6 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:id="@+id/lblcefuroxim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
         android:layout_alignLeft="@+id/lblUOP"
         android:layout_alignStart="@+id/lblUOP"
@@ -295,7 +294,8 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:text=" cefuroxim"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="85dp" />
+        tools:layout_editor_absoluteY="85dp"
+        android:layout_below="@+id/lblFluid" />
 
 <TextView
     android:id="@+id/textView6"
@@ -313,14 +313,14 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
 
     <TextView
         android:id="@+id/lblFluid"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
         android:layout_alignLeft="@+id/lblcefuroxim"
         android:layout_alignStart="@+id/lblcefuroxim"
         android:fontFamily="sans-serif"
-        android:includeFontPadding="true"
+        android:includeFontPadding="false"
         android:text="displayFluid"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="189dp"
@@ -372,11 +372,24 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
     android:layout_toRightOf="@+id/textView22" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Medical Advicor : Dr Prasad Fernando"
+        android:layout_above="@+id/textView5"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignStart="@+id/textView8"
+        android:layout_alignRight="@+id/txtWeight"
+        android:layout_alignEnd="@+id/txtWeight" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developer: Mihindu Wijesena"
         android:layout_alignParentBottom="true"
-        android:text="Developed by Mihindu Wijesena" />
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
 
 </RelativeLayout>
 
