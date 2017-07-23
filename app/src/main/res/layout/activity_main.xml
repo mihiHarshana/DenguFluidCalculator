@@ -16,7 +16,7 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:layout_toRightOf="@+id/textView19"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
-        android:maxLength="12"
+        android:maxLength="20"
         android:text="IV Cefotaxim"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -399,7 +399,7 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
 
         android:ems="10"
         android:inputType="numberDecimal"
-        android:maxLength="3"
+        android:maxLength="5"
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="7dp" />
 

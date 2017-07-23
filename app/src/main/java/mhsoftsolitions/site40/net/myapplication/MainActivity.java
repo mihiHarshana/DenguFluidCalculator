@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     lblFluidIV.setText(setFluid(weight , 2.5));
                     lblFluidOral.setText(setFluidIVandOral(weight, 2.5));
                     lblMaintainance.setText(setMaintainance(weight));
-                    lblAdditional.setText(setAdditional(weight));
+                    lblAdditional.setText(setAdditional(weight, mainAdd));
                     lblTranexamicAcid.setText(setTranexamicAcid(weight));
                     lblOmeprazole.setText(setOmeprazole(weight));
                     lblFlagyl.setText(setFlagyl(weight));
@@ -97,7 +97,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String setFluid(Double weight, double value){
-        return Double.toString(weight * value)  +" ml/ hr ";
+        Double result =  weight * value;
+        result =formatDoubleToDecimels (result);
+        return Double.toString(result)  +" ml/ hr";
     }
 
     public String setFluidIVandOral(Double weight, double value) {
@@ -110,11 +112,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String setCefuroxim (Double weight) {
-        Double Cefuroxim = weight *30;
-        if (Cefuroxim >= 750){
+        Double cefuroxim = weight *30;
+        cefuroxim =  formatDoubleToDecimels(cefuroxim);
+        if (cefuroxim >= 750){
             return "750.0 mg/ 8hr" ;
         }
-        return Double.toString(weight *30)+ " mg/ 8hr";
+        return Double.toString(cefuroxim)+ " mg/ 8hr";
     }
 
 /*    public String setFluidIV(Double weight){
@@ -126,7 +129,12 @@ public class MainActivity extends AppCompatActivity {
     }*/
 
     public String setUOP(Double weight) {
-        return Double.toString(weight * 0.7 * 3) + "ml/ 3hr";
+        Double result = weight * 0.7 * 3;
+        result = formatDoubleToDecimels(result);
+        if (result >=75) {
+            return "75 ml/ 3hr";
+        }
+        return Double.toString(result) + " ml/ 3hr";
     }
 
     public String setMaintainance (Double weight) {
@@ -135,40 +143,44 @@ public class MainActivity extends AppCompatActivity {
         if (weight > 20) {
             result = (weight - 20) * 20;
             result = result+ (100*10 ) + (50 * 10);
+            result = formatDoubleToDecimels(result);
             mainAdd = result;
             if (result >=2100) {
                 mainAdd = 2100;
                 return "2100 ml/ 24hr";
             }
-            return Double.toString(result)  + "ml/ 24hr";
+            return Double.toString(result)  + " ml/ 24hr";
         }  if (weight >= 11) {
             result = result + (weight - 10) * 50;
             result = result + (100*10 );
+            result = formatDoubleToDecimels(result);
             mainAdd = result;
             if (result >=2100) {
                 mainAdd = 2100;
                 return "2100 ml/ 24hr";
             }
-            return Double.toString(result)  + "ml/ 24hr";
+            return Double.toString(result)  + " ml/ 24hr";
         }  else { //(weight <= 10) {
             result = result + (weight * 100);
+            result = formatDoubleToDecimels(result);
             mainAdd = result;
             if (result >=2100) {
                 mainAdd = 2100;
                 return "2100 ml/ 24hr";
             }
-            return Double.toString(result) + "ml/ 24hr";
+            return Double.toString(result) + " ml/ 24hr";
         }
        // return Double.toString(result);
     }
     //TODO rename this method
-    public String setAdditional(Double weight){
+    public String setAdditional(Double weight ,Double mainAdd1 ){
         double result = 0.0;
-        result = mainAdd + (50 * weight);
+        result = mainAdd1 + (50 * weight);
+        result = formatDoubleToDecimels(result);
         if (result >=4600) {
-            return "4600 ml/ 24hr";
+            return "4600.0 ml/ 48hr";
         }
-        return Double.toString(result) + "ml/ 48hr";
+        return Double.toString(result) + " ml/ 48hr";
     }
     public void clearText(){
         lblFluid.setText("0");
@@ -187,31 +199,39 @@ public class MainActivity extends AppCompatActivity {
 
     public String setTranexamicAcid(Double weight) {
         Double tranexamic = weight * 10;
+        tranexamic = formatDoubleToDecimels(tranexamic);
         if (tranexamic >=500) {
-            return "500.0 mg/ tds";
+            return "500.0 mg tds";
         }
         return Double.toString(tranexamic) + " mg tds";
     }
 
     public String setOmeprazole (Double weight) {
-        Double Omeprazole = weight * 0.5;
-        if (Omeprazole >=20){
+        Double omeprazole = weight * 0.5;
+        omeprazole = formatDoubleToDecimels(omeprazole);
+        if (omeprazole >=20){
             return "20.0 mg bd";
         }
-        return Double.toString(Omeprazole) + "mg bd" ;
+        return Double.toString(omeprazole) + "mg bd" ;
     }
     public String setFlagyl(Double weight){
         Double flagyl=weight * 7.5;
+        flagyl = formatDoubleToDecimels(flagyl);
         if (flagyl >=500) {
-            return "500 mg tds";
+            return "500.0 mg tds";
         }
         return Double.toString(flagyl) + " mg tds";
     }
     public String setCefotaxim(Double weight) {
-        Double Cefotaxim = weight * 50;
-        if (Cefotaxim >=4000){
-            return "4 mg/ 8hr" ;
+        Double cefotaxim = weight * 50;
+        cefotaxim = formatDoubleToDecimels(cefotaxim);
+        if (cefotaxim >=4000){
+            return "4000.0 mg/ 8hr" ;
         }
-        return Double.toString(weight * 50) + "mg/ 8hr";
+        return Double.toString(cefotaxim) + " mg/ 8hr";
+    }
+
+    private Double formatDoubleToDecimels(Double result) {
+        return Double.parseDouble(String.format("%.2f",result ));
     }
 }
