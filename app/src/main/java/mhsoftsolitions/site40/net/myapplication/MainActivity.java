@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
         if (omeprazole >=20){
             return "20.0 mg bd";
         }
-        return Double.toString(omeprazole) + "mg bd" ;
+        return Double.toString(omeprazole) + " mg bd" ;
     }
     public String setFlagyl(Double weight){
         Double flagyl=weight * 7.5;

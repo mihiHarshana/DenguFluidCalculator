@@ -50,14 +50,14 @@ public class FluidTest {
     public void CefuroximCalulationMoreThan750() {
         weight = 26.0;
         MainActivity m = new MainActivity();
-        assertEquals( "750.0", m.setCefuroxim(weight));
+        assertEquals( "750.0 mg/ 8hr", m.setCefuroxim(weight));
     }
 
     @Test
     public void setFluid2p5() {
         weight = 22.0;
         MainActivity m = new MainActivity();
-        assertEquals( "22.0", m.setFluid(weight,2.5));
+        assertEquals( "55.0 ml/ hr", m.setFluid(weight,2.5));
     }
 
     @Test
@@ -92,7 +92,7 @@ public class FluidTest {
     public void setMaintainanceWeightLessThan10() {
         weight = 10.0;
         MainActivity m = new MainActivity();
-        assertEquals("1000  ml/ 24hr" , m.setMaintainance(weight));
+        assertEquals("1000.0 ml/ 24hr" , m.setMaintainance(weight));
     }
 
     @Test
