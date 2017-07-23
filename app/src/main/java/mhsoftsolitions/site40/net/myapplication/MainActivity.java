@@ -1,11 +1,15 @@
 package mhsoftsolitions.site40.net.myapplication;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import static mhsoftsolitions.site40.net.myapplication.BuildConfig.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +37,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initComponents();
+        String versionName = BuildConfig.VERSION_NAME;
 
+        String  title = getString(R.string.app_name);
+
+        this.setTitle(title  + " V" + versionName);
         txtWeight.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -52,12 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
                 } else{
                     double weight = Double.valueOf(txtWeight.getText().toString());
-                    lblFluid.setText(setFluid(weight));
-                    lblFluidOralAndiV.setText(setFluidIVandOral(weight));
+                    lblFluid.setText(setFluid(weight ,1.5));
+                    lblFluidOralAndiV.setText(setFluidIVandOral(weight,1.5));
                     lblCefuroxim.setText(setCefuroxim(weight));
                     lblUOP.setText(setUOP(weight));
-                    lblFluidIV.setText(setFluidIV(weight));
-                    lblFluidOral.setText(setFluidOral(weight));
+                    lblFluidIV.setText(setFluid(weight , 2.5));
+                    lblFluidOral.setText(setFluidIVandOral(weight, 2.5));
                     lblMaintainance.setText(setMaintainance(weight));
                     lblAdditional.setText(setAdditional(weight));
                     lblTranexamicAcid.setText(setTranexamicAcid(weight));
@@ -88,12 +96,17 @@ public class MainActivity extends AppCompatActivity {
         clearText();
     }
 
-    public String setFluid(Double weight){
-        return Double.toString(weight *1.5)  +" ml/ hr ";
+    public String setFluid(Double weight, double value){
+        return Double.toString(weight * value)  +" ml/ hr ";
     }
 
-    public String setFluidIVandOral(Double weight) {
-        return "O:" + weight  +  " IV:" + Double.toString(weight * 0.5) ;
+    public String setFluidIVandOral(Double weight, double value) {
+        if (value == 1.5) {
+            return "O:" + weight  +  " IV:" + Double.toString(weight * 0.5) ;
+        }
+        else {
+            return "O:" + Double.toString(weight * 2)  +  " IV:" + Double.toString(weight * 0.5) ;
+        }
     }
 
     public String setCefuroxim (Double weight) {
@@ -104,13 +117,13 @@ public class MainActivity extends AppCompatActivity {
         return Double.toString(weight *30)+ " mg/ 8hr";
     }
 
-    public String setFluidIV(Double weight){
+/*    public String setFluidIV(Double weight){
         return Double.toString(weight * 0.5) + " ml/ hr";
     }
 
     public String setFluidOral(Double weight){
         return Double.toString(weight * 2) + " ml/ hr";
-    }
+    }*/
 
     public String setUOP(Double weight) {
         return Double.toString(weight * 0.7 * 3) + "ml/ 3hr";
@@ -123,15 +136,27 @@ public class MainActivity extends AppCompatActivity {
             result = (weight - 20) * 20;
             result = result+ (100*10 ) + (50 * 10);
             mainAdd = result;
+            if (result >=2100) {
+                mainAdd = 2100;
+                return "2100 ml/ 24hr";
+            }
             return Double.toString(result)  + "ml/ 24hr";
         }  if (weight >= 11) {
             result = result + (weight - 10) * 50;
             result = result + (100*10 );
             mainAdd = result;
+            if (result >=2100) {
+                mainAdd = 2100;
+                return "2100 ml/ 24hr";
+            }
             return Double.toString(result)  + "ml/ 24hr";
         }  else { //(weight <= 10) {
             result = result + (weight * 100);
             mainAdd = result;
+            if (result >=2100) {
+                mainAdd = 2100;
+                return "2100 ml/ 24hr";
+            }
             return Double.toString(result) + "ml/ 24hr";
         }
        // return Double.toString(result);
@@ -139,8 +164,10 @@ public class MainActivity extends AppCompatActivity {
     //TODO rename this method
     public String setAdditional(Double weight){
         double result = 0.0;
-       // double m= Double.valueOf(lblMaintainance.getText().toString());
         result = mainAdd + (50 * weight);
+        if (result >=4600) {
+            return "4600 ml/ 24hr";
+        }
         return Double.toString(result) + "ml/ 48hr";
     }
     public void clearText(){
@@ -182,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public String setCefotaxim(Double weight) {
         Double Cefotaxim = weight * 50;
-        if (Cefotaxim >=4){
+        if (Cefotaxim >=4000){
             return "4 mg/ 8hr" ;
         }
         return Double.toString(weight * 50) + "mg/ 8hr";

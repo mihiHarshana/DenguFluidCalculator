@@ -13,7 +13,7 @@ public class FluidTest {
     @Test
     public void FluidCalulation() {
         MainActivity m = new MainActivity();
-        assertEquals( "33.0" , m.setFluid(weight));
+        assertEquals( "33.0" , m.setFluid(weight, 1.5));
     }
 
     @Test
@@ -35,15 +35,15 @@ public class FluidTest {
     public void setFluidIV() {
         weight = 22.0;
         MainActivity m = new MainActivity();
-        assertEquals( "22.0", m.setFluidIV(weight));
+        assertEquals( "22.0", m.setFluid(weight,2.5));
     }
 
-    @Test
+/*    @Test
     public void setFluidOral() {
         weight = 22.0;
         MainActivity m = new MainActivity();
         assertEquals( "33.0" , m.setFluidOral(weight));
-    }
+    }*/
 
     @Test
     public void setUOP() {

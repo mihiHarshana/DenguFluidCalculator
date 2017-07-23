@@ -19,6 +19,7 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:maxLength="12"
         android:text="IV Cefotaxim"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="189dp"
         tools:layout_editor_absoluteY="85dp" />
@@ -27,16 +28,16 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:includeFontPadding="true"
-        android:text="Flagyl"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_below="@+id/lblOmeprazole"
         android:layout_alignLeft="@+id/textView22"
         android:layout_alignStart="@+id/textView22"
-        android:layout_marginTop="13dp" />
+        android:layout_below="@+id/lblOmeprazole"
+        android:layout_marginTop="13dp"
+        android:fontFamily="sans-serif"
+        android:includeFontPadding="true"
+        android:text="IV Flagyl"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="85dp" />
 
     <TextView
         android:id="@+id/lblFlagyl"
@@ -58,31 +59,32 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView19"
+        android:layout_alignStart="@+id/textView19"
+        android:layout_below="@+id/lblTranexamicAcid"
         android:layout_marginTop="13dp"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:text="IV Omeprazole"
-        android:textSize="14sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_below="@+id/lblTranexamicAcid"
-        android:layout_alignLeft="@+id/textView19"
-        android:layout_alignStart="@+id/textView19" />
+        tools:layout_editor_absoluteY="85dp" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView17"
+        android:layout_alignStart="@+id/textView17"
+        android:layout_below="@+id/lblAdditional"
+        android:layout_marginTop="13dp"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:text="IV Tranexamic Acid"
-        android:textSize="14sp"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/lblAdditional"
-        android:layout_alignLeft="@+id/textView17"
-        android:layout_alignStart="@+id/textView17" />
+        tools:layout_editor_absoluteY="85dp" />
 
     <TextView
         android:id="@+id/lblOmeprazole"
@@ -97,6 +99,7 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:maxLength="20"
         android:text="dsplyTranexamicAcid"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="189dp"
         tools:layout_editor_absoluteY="85dp" />
@@ -105,15 +108,16 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView16"
+        android:layout_alignStart="@+id/textView16"
+        android:layout_below="@+id/lblMaintainance"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:text="M + 5%"
-        android:textSize="14sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_below="@+id/lblMaintainance"
-        android:layout_alignLeft="@+id/textView14"
-        android:layout_alignStart="@+id/textView14" />
+        tools:layout_editor_absoluteY="85dp" />
 
     <TextView
         android:id="@+id/lblTranexamicAcid"
@@ -147,6 +151,7 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:maxLength="20"
         android:text="displayAdditional"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="189dp"
         tools:layout_editor_absoluteY="85dp" />
@@ -155,16 +160,16 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11"
+        android:layout_below="@+id/lblFluidORal"
+        android:layout_marginTop="12dp"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:text="M"
-        android:textSize="14sp"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/lblFluidORal"
-        android:layout_alignLeft="@+id/textView17"
-        android:layout_alignStart="@+id/textView17" />
+        tools:layout_editor_absoluteY="85dp" />
 
     <TextView
         android:id="@+id/lblFluidORal"
@@ -177,40 +182,28 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:maxLength="20"
-        android:text="displayFluidORAL"
+        android:text="dsplyFuild2p5O/IV"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         tools:layout_editor_absoluteX="189dp"
         tools:layout_editor_absoluteY="85dp" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:includeFontPadding="true"
-        android:text="Fuid Oral (2)"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_below="@+id/lblFluidIV"
-        android:layout_alignLeft="@+id/textView11"
-        android:layout_alignStart="@+id/textView11" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_alignLeft="@+id/textView10"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_alignTop="@+id/lblFluidIV"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
-        android:text="Fuid IV (0.5)"
-        android:textSize="14sp"
+        android:text="Fluid (2.5)"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_alignTop="@+id/lblFluidIV"
-        android:layout_alignRight="@+id/textView4"
-        android:layout_alignEnd="@+id/textView4" />
+        tools:layout_editor_absoluteY="85dp" />
 
     <TextView
         android:id="@+id/lblFluidIV"
@@ -224,8 +217,9 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:maxLength="12"
-        android:text="displayFluidIV"
+        android:text="displayFluid2p5"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="189dp"
         tools:layout_editor_absoluteY="85dp" />
@@ -251,16 +245,16 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/lblcefuroxim"
+        android:layout_marginTop="15dp"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:text="U O P (0.7)"
-        android:textSize="14sp"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_below="@+id/textView4"
-        android:layout_alignLeft="@+id/textView11"
-        android:layout_alignStart="@+id/textView11"
-        android:layout_marginTop="20dp" />
+        tools:layout_editor_absoluteY="85dp" />
 
     <TextView
         android:id="@+id/lblMaintainance"
@@ -284,16 +278,17 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_alignLeft="@+id/textView24"
+        android:layout_alignStart="@+id/textView24"
+        android:layout_below="@+id/lblFlagyl"
+        android:layout_marginTop="11dp"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:text="IV Cefotxim"
-        android:textSize="14sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_below="@+id/lblFlagyl"
-        android:layout_alignLeft="@+id/textView24"
-        android:layout_alignStart="@+id/textView24"
-        android:layout_marginTop="11dp" />
+        tools:layout_editor_absoluteY="85dp" />
 
     <TextView
         android:id="@+id/lblcefuroxim"
@@ -307,6 +302,7 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:maxLength="12"
         android:text=" cefuroxim"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="189dp"
         tools:layout_editor_absoluteY="85dp" />
@@ -318,10 +314,11 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3"
         android:layout_below="@+id/txtWeight"
+        android:layout_marginTop="12dp"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:text="Fluid (1.5)"
-        android:textSize="14sp"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="85dp" />
 
@@ -361,16 +358,17 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_below="@+id/lblFluidOralAndIV"
         android:layout_marginTop="12dp"
         android:fontFamily="sans-serif"
         android:includeFontPadding="true"
         android:text="iv cefuroxim"
-        android:textSize="14sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="85dp"
-        android:layout_below="@+id/lblFluidOralAndIV"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6" />
+        tools:layout_editor_absoluteY="85dp" />
 
 <TextView
     android:id="@+id/textView3"
@@ -390,30 +388,31 @@ tools:context="mhsoftsolitions.site40.net.myapplication.MainActivity">
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true" />
 
-<EditText
-    android:id="@+id/txtWeight"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:ems="10"
-    android:inputType="numberDecimal"
-    tools:layout_editor_absoluteX="153dp"
-    tools:layout_editor_absoluteY="7dp"
+    <EditText
+        android:id="@+id/txtWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/lblFluid"
+        android:layout_alignStart="@+id/lblFluid"
 
-    android:layout_alignBaseline="@+id/textView3"
-    android:layout_alignBottom="@+id/textView3"
-    android:layout_alignLeft="@+id/lblFluid"
-    android:layout_alignStart="@+id/lblFluid" />
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:maxLength="3"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="7dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Medical Advicor : Dr Prasad Fernando"
         android:layout_above="@+id/textView5"
+        android:layout_alignEnd="@+id/txtWeight"
         android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8"
         android:layout_alignRight="@+id/txtWeight"
-        android:layout_alignEnd="@+id/txtWeight" />
+        android:layout_alignStart="@+id/textView8"
+        android:text="Medical Advisor : Dr Prasad Fernando" />
 
     <TextView
         android:id="@+id/textView5"
